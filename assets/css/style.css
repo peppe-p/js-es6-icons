@@ -4,10 +4,12 @@
 }
 body {
     font-family: 'Rubik', sans-serif;
+    background-color: lightgray;
 }
 
 header {
     height: auto;
+    background-color: white;
 }
 
 h1 {
@@ -33,6 +35,13 @@ h1 {
     justify-content: space-between;
 }
 
+i {
+    font-size: 35px;
+    margin: 5px 5px;
+}
+
+
+
 /* ##### HEADER ##### */
 .logo {
     padding: 15px;
@@ -52,4 +61,13 @@ h1 {
 .icons_list {
     width: 80%;
     margin: auto;
+    padding: 25px;
+}
+
+.icons_list > div {
+    width: 230px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px #000000b3;
 }
