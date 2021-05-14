@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+header {
+    height: auto;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.d_flex {
+    display: flex;
+}
+.justify_center {
+    justify-content: center;
+}
+.align_center {
+    align-items: center;
+}
+.f_col {
+    flex-direction: column;
+}
+.f_around {
+    justify-content: space-around;
+}
+.f_between {
+    justify-content: space-between;
+}
+
+/* ##### HEADER ##### */
+.logo {
+    padding: 15px;
+}
+
+
+/* ##### MAIN ##### */
+.top_bar {
+    background-color: deepskyblue;
+    height: 80px;
+}
+
+.top_bar > * {
+    margin: 5px 10px;
+}
+
+.icons_list {
+    width: 80%;
+    margin: auto;
+}
