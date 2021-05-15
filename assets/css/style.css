@@ -35,9 +35,19 @@ h1 {
     justify-content: space-between;
 }
 
+
 i {
     font-size: 35px;
     margin: 5px 5px;
+}
+.user {
+    color: purple;
+}
+.vegetable {
+    color: orange;
+}
+.animal {
+    color: blue;
 }
 
 
@@ -62,6 +72,7 @@ i {
     width: 80%;
     margin: auto;
     padding: 25px;
+    flex-wrap: wrap;
 }
 
 .icons_list > div {
@@ -70,4 +81,5 @@ i {
     background-color: white;
     border-radius: 10px;
     box-shadow: 1px 1px 4px #000000b3;
+    margin: 30px;
 }

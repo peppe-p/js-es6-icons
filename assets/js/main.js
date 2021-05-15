@@ -101,15 +101,15 @@ const elementList = [
 
 elementList.forEach(function (element) {
     console.log(element.name);
-    const { name, prefix, type, family } = elementList
+    const { name, prefix, type, family } = element;
     const markup = `
-    <div class="icons_list d_flex justify_center">
-            <div class="d_flex justify_center align_center f_col">
-                <i class="${family} ${prefix}${name}"></i>
-                <h4>${name.toUpperCase()}</h4>
-            </div>
-    </div>
-    `
+        <div class="icon_div d_flex justify_center align_center f_col">
+            <i class="${family} ${prefix}${name} ${type}"></i>
+            <h4>${name.toUpperCase()}</h4>
+        </div>
+    `;
+    const domEl = document.querySelector(".icons_list");
+    domEl.insertAdjacentHTML("beforeend", markup);
 });
 
 //Milestone 2
