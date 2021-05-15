@@ -99,12 +99,15 @@ const elementList = [
     }
 ];
 
+
+//Milestone 2
+//Coloriamo le icone per tipo
 elementList.forEach(function (element) {
     console.log(element.name);
     const { name, prefix, type, family } = element;
     const markup = `
-        <div class="icon_div d_flex justify_center align_center f_col">
-            <i class="${family} ${prefix}${name} ${type}"></i>
+        <div class="${type} icon_div d_flex justify_center align_center f_col">
+            <i class="${family} ${prefix}${name}"></i>
             <h4>${name.toUpperCase()}</h4>
         </div>
     `;
@@ -112,8 +115,63 @@ elementList.forEach(function (element) {
     domEl.insertAdjacentHTML("beforeend", markup);
 });
 
-//Milestone 2
-//Coloriamo le icone per tipo
 
 //Milestone 3
 //Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+const type = document.getElementById("type");
+type.addEventListener("change", function () {
+    let tipo = this.value;
+    let icons_all = document.querySelectorAll(".icon_div");
+    let icons_user = document.querySelectorAll(".user");
+    let icons_animal = document.querySelectorAll(".animal");
+    let icons_vegetable = document.querySelectorAll(".vegetable");
+    // SE SELEZIONI TUTTO ////////////////
+    if (type.value == "all") {
+        icons_all.forEach((div) => {
+            div.classList.add("showed");
+            div.classList.remove("none");
+        });
+        // SE SELEZIONI UTENTE ////////////////
+    } else if (type.value == "user") {
+        icons_user.forEach((div) => {
+            div.classList.add("showed");
+            div.classList.remove("none");
+        });
+        icons_animal.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        icons_vegetable.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        // SE SELEZIONI ANIMALI ////////////////
+    } else if (type.value == "animal") {
+        icons_user.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        icons_animal.forEach((div) => {
+            div.classList.add("showed");
+            div.classList.remove("none");
+        });
+        icons_vegetable.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        // SE SELEZIONI VERDURE ////////////////
+    } else if (type.value == "vegetables") {
+        icons_user.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        icons_animal.forEach((div) => {
+            div.classList.add("none");
+            div.classList.remove("showed");
+        });
+        icons_vegetable.forEach((div) => {
+            div.classList.add("showed");
+            div.classList.remove("none");
+        });
+    }
+});
